@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: custom global styles */
+body {
+  @apply bg-white text-slate-800 antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold text-slate-900;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+}
+
