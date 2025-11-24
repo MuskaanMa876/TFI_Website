@@ -1,154 +1,104 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { FaLaptopCode, FaDatabase, FaShoppingCart, FaRobot, FaUserGraduate } from "react-icons/fa";
 
 export default function Home() {
-  const services = [
-    {
-      title: "Full Stack Development",
-      icon: <FaLaptopCode size={32} />,
-      desc: "Build scalable web, mobile, and SaaS platforms with modern frameworks like React, Node.js, and Next.js.",
-    },
-    {
-      title: "Data Analytics",
-      icon: <FaDatabase size={32} />,
-      desc: "Turn raw data into actionable insights using BI dashboards, predictive analytics, and cloud data pipelines.",
-    },
-    {
-      title: "E-Commerce Solutions",
-      icon: <FaShoppingCart size={32} />,
-      desc: "Launch secure, high-converting online stores with integrated payments, inventory management, and automation.",
-    },
-    {
-      title: "AI-Powered Solutions",
-      icon: <FaRobot size={32} />,
-      desc: "Integrate chatbots, AI-driven forecasting, and custom ML models to automate and scale intelligently.",
-    },
-    {
-      title: "Company-Specific Training",
-      icon: <FaUserGraduate size={32} />,
-      desc: "Deliver hands-on tech training in colleges on Full Stack Development and Generative AI for industry readiness.",
-    },
-  ];
-
   return (
-    <div className="overflow-hidden">
-      {/* ===== HERO SECTION ===== */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-sky-600 text-white py-24 relative">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <motion.h1
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl font-extrabold leading-tight"
-          >
-            Empowering the Future through{" "}
-            <span className="text-sky-300">Technology & Innovation</span>
-          </motion.h1>
+    <main
+      className="text-slate-100"
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(18,27,48,0.55), rgba(28,14,63,0.58)), url('/images/home-bg.jpg')",
+        // ↑ purple + blue tint = clean & premium
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
+    >
+      {/* ========================= */}
+      {/* HERO SECTION */}
+      {/* ========================= */}
+      <section className="min-h-screen flex items-center px-6">
+        <div className="max-w-5xl mx-auto text-left">
 
-          <motion.p
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="mt-6 text-lg max-w-2xl mx-auto text-blue-100"
-          >
-            Techno Future India pioneers digital transformation — delivering
-            cutting-edge solutions and next-gen learning experiences to help
-            businesses and students thrive in the digital era.
-          </motion.p>
+          <h1 className="text-6xl font-bold text-white leading-tight">
+            Engineering Solutions  
+            <span className="block mt-2 bg-gradient-to-r from-[#3EA8FF] to-[#8B5CF6] text-transparent bg-clip-text">
+              Built for the Next Decade
+            </span>
+          </h1>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="mt-10 flex justify-center gap-4"
-          >
+          <p className="mt-6 text-xl text-slate-200 max-w-3xl leading-relaxed">
+            We design and engineer digital systems with clarity, precision, and
+            modern development practices — creating scalable and future-ready
+            solutions.
+          </p>
+
+          <div className="mt-10 flex gap-6">
             <Link
               to="/services"
-              className="bg-white text-blue-900 font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-sky-100 transition"
+              className="px-7 py-3 bg-gradient-to-r from-[#3EA8FF] to-[#8B5CF6] rounded-lg text-white text-sm font-semibold hover:opacity-90 transition"
             >
-              Explore Services
+              View Services
             </Link>
+
             <Link
-              to="/careers"
-              className="border border-white text-white font-semibold px-6 py-3 rounded-full hover:bg-white hover:text-blue-900 transition"
+              to="/contact"
+              className="px-7 py-3 border border-white/40 rounded-lg text-white text-sm font-semibold hover:bg-white hover:text-black transition"
             >
-              Join Our Team
+              Contact Us
             </Link>
-          </motion.div>
-        </div>
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 0.2, y: 0 }}
-          transition={{ duration: 1.5 }}
-          className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-cover opacity-10"
-        />
-      </section>
-
-      {/* ===== SERVICES SECTION ===== */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl font-bold text-center text-gray-800 mb-12"
-          >
-            Our Core Services
-          </motion.h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((srv, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.05 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                initial={{ opacity: 0, y: 30 }}
-                transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="bg-white shadow-lg rounded-xl p-6 hover:shadow-2xl transition"
-              >
-                <div className="text-blue-700 mb-4">{srv.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{srv.title}</h3>
-                <p className="text-gray-600 text-sm">{srv.desc}</p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
 
-      {/* ===== CALL TO ACTION ===== */}
-      <section className="py-20 bg-gradient-to-br from-sky-700 to-blue-900 text-white text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-3xl font-bold mb-4"
-        >
-          Ready to Transform Your Vision into Reality?
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="max-w-2xl mx-auto text-blue-100 mb-8"
-        >
-          Partner with Techno Future India to innovate, automate, and scale your
-          business with future-ready technology.
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
-          <Link
-            to="/contact"
-            className="bg-white text-blue-900 font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-sky-100 transition"
-          >
-            Get in Touch
-          </Link>
-        </motion.div>
+      {/* ========================= */}
+      {/* SECOND SECTION — WHAT WE DO */}
+      {/* ========================= */}
+      <section className="min-h-screen flex items-center px-6 bg-black/20 backdrop-blur-md">
+        <div className="max-w-6xl mx-auto">
+
+          <h2 className="text-4xl font-bold text-white">What We Deliver</h2>
+
+          <p className="text-slate-200 mt-4 max-w-3xl">
+            Engineering clarity meets strategic thinking — resulting in
+            reliable, scalable, and meaningful digital solutions.
+          </p>
+
+          <div className="mt-14 grid md:grid-cols-3 gap-10">
+
+            <div className="p-6 rounded-lg border border-white/20 bg-gradient-to-br from-[#1E293B]/60 to-[#3b2863]/40">
+              <h3 className="text-xl font-semibold text-white">
+                Full-Stack Engineering
+              </h3>
+              <p className="mt-3 text-slate-200 text-sm">
+                Modern architectures, smooth deployments, and scalable
+                engineering practices.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-lg border border-white/20 bg-gradient-to-br from-[#0f263a]/60 to-[#4f2a6d]/40">
+              <h3 className="text-xl font-semibold text-white">
+                AI & Data Systems
+              </h3>
+              <p className="mt-3 text-slate-200 text-sm">
+                Intelligent systems, automation pipelines, and predictive
+                engineering.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-lg border border-white/20 bg-gradient-to-br from-[#112031]/60 to-[#6040a8]/40">
+              <h3 className="text-xl font-semibold text-white">
+                Technical Training
+              </h3>
+              <p className="mt-3 text-slate-200 text-sm">
+                Industry-aligned training and deep engineering programs.
+              </p>
+            </div>
+
+          </div>
+        </div>
       </section>
-    </div>
+
+    </main>
   );
 }

@@ -2,21 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Optional: custom global styles */
+/* GLOBAL BODY STYLING */
 body {
-  @apply bg-white text-slate-800 antialiased;
+  @apply antialiased text-slate-200;
+  
+  /* Background image from PUBLIC folder */
+  background-image: url('/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* Optional subtle dark overlay for readability */
+  position: relative;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  @apply font-semibold text-slate-900;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* Adjust transparency */
+  pointer-events: none;
+  z-index: -1;
 }
+
+/* HEADINGS */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold;
+  color: #ffffff;
+}
+
+/* SMOOTH TRANSITIONS GLOBALLY */
+* {
+  @apply transition duration-200 ease-in-out;
+}
+
+/* GEN-Z GRADIENT ANIMATION */
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
 .animate-gradient {
   background-size: 200% 200%;
   animation: gradientShift 6s ease infinite;
 }
 
+/* Optional: Hide horizontal scroll caused by animated blobs */
+html, body {
+  overflow-x: hidden;
+}

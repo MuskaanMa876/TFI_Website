@@ -1,35 +1,35 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Home from "./Pages/Home";
-import About from "./Pages/About";
-import Services from "./Pages/Services";
-import Team from "./Pages/Team";
-import Careers from "./Pages/Careers";
-import News from "./Pages/News";
-import Contact from "./Pages/Contact";
-import Rules from "./Pages/Rules";
-import Goals from "./Pages/Goals";
-import WhyChooseUs from "./Pages/WhyChooseUs";
-import PR from "./Pages/PR";
+
+import Home from "./pages/Home";
+import About from "./pages/About";        // Contains Why Us, Team, Rules, Missions
+import Services from "./pages/Services";
+import Careers from "./pages/Careers";
+import News from "./pages/News";
+import Contact from "./pages/Contact";    // If you want, I’ll redesign this next
 
 function App() {
   return (
     <Router>
+      {/* NAVBAR */}
       <Navbar />
+
+      {/* PAGES */}
       <Routes>
         <Route path="/" element={<Home />} />
+
+        {/* ABOUT (has Why Us, Team, Rules, Missions inside this page) */}
         <Route path="/about" element={<About />} />
+
         <Route path="/services" element={<Services />} />
-        <Route path="/team" element={<Team />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/news" element={<News />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/rules" element={<Rules />} />
-        <Route path="/goals" element={<Goals />} />
-        <Route path="/why-choose-us" element={<WhyChooseUs />} />
-        <Route path="/pr" element={<PR />} />
       </Routes>
+
+      {/* FOOTER */}
       <Footer />
     </Router>
   );
