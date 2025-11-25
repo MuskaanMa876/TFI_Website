@@ -9,24 +9,25 @@ export default function Navbar() {
     { name: "About", to: "/about" },
     { name: "Services", to: "/services" },
     { name: "Careers", to: "/careers" },
+    { name: "News", to: "/news" },       // ✅ Added News
     { name: "Contact", to: "/contact" },
   ];
 
   return (
-    <header className="w-full sticky top-0 z-50 bg-[#f2f4fa]/70 backdrop-blur-sm border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
+    <header className="w-full sticky top-0 z-50 backdrop-blur-lg">
+      <div className="w-full px-8 flex items-center justify-between h-16">
 
-        {/* SQUARE LOGO */}
+        {/* LOGO */}
         <Link to="/" className="flex items-center">
           <img
             src={LogoSquare}
             alt="TFI Logo Square"
-            className="h-[120px] w-[120px] object-contain"
+            className="h-12 w-12 object-contain"
           />
         </Link>
 
-        {/* NAVIGATION */}
-        <nav className="flex items-center gap-10 text-[16px] font-medium">
+        {/* NAV ITEMS */}
+        <nav className="flex items-center gap-8 text-[15px] font-medium ml-auto">
           {navLinks.map((item) => (
             <Link
               key={item.to}
@@ -41,7 +42,6 @@ export default function Navbar() {
             </Link>
           ))}
         </nav>
-
       </div>
     </header>
   );
