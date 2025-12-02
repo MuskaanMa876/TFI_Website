@@ -7,7 +7,7 @@ import "./index.css";
 document.documentElement.style.scrollBehavior = "smooth";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  
     <App />
-  </React.StrictMode>
+ 
 );

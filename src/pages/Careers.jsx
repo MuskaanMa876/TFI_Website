@@ -1,6 +1,9 @@
 import React from "react";
 import { jobs } from "../data/jobs";
-import Card from "../ui/Card"; // import your reusable Card
+import Card from "../ui/Card";
+import { Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+
 
 export default function Careers() {
   return (
@@ -16,32 +19,27 @@ export default function Careers() {
           </p>
 
           {/* JOB CARDS */}
-          <div className="mt-16 grid md:grid-cols-2 gap-8">
+          <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {jobs.map((job) => (
               <Card
                 key={job.id}
                 title={job.title}
                 description={
                   <>
-                    <p className="text-sm  mt-1">{job.location}</p>
-                    <p className="text-sm mt-2 leading-relaxed">{job.desc}</p>
-                    <div className="mt-5 flex gap-4">
-                      <a
-                        href={job.apply}
-                        className="px-6 py-2 rounded-lg bg-gradient-to-r from-black via-red-600 to-black text-white text-sm font-semibold hover:opacity-90 transition-all duration-300 ease-in-out"
+                    <p className="text-sm mt-1">{job.location}</p>
+                    <p className="text-sm mt-2 leading-relaxed">{job.short}</p>
+
+                    <div className="mt-5">
+                      {/* APPLY NOW ONLY */}
+                      <Link
+                        to={`/apply/${job.id}`}
+                        className="px-6 py-2 rounded-lg bg-gradient-to-r from-black via-red-600 to-black text-white text-sm font-semibold hover:opacity-90 transition-all"
                       >
                         Apply Now →
-                      </a>
-                      <button
-                        onClick={() => alert(`Viewing details for ${job.title}`)}
-                        className="px-6 py-2 rounded-lg bg-gradient-to-r from-white/20 via-white/10 to-white/20 text-white text-sm font-semibold hover:bg-white/30 transition-all duration-300 ease-in-out"
-                      >
-                        View Details
-                      </button>
+                      </Link>
                     </div>
                   </>
                 }
-                img={null} // no image for jobs
               />
             ))}
           </div>

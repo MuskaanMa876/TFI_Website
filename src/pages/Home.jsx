@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../ui/Card";
 import { Link } from "react-router-dom";
+import WorkspaceCarousel from "../components/WorkspaceCarousel";
 
 export default function Home() {
   return (
@@ -49,9 +50,10 @@ export default function Home() {
 
           {/* RIGHT CAROUSEL */}
           <div className="relative w-full h-[420px] rounded-2xl overflow-hidden shadow-xl">
-            <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center text-black font-semibold">
-              Carousel Placeholder
-            </div>
+            <div className="relative w-full h-[420px] rounded-2xl overflow-hidden shadow-xl">
+  <WorkspaceCarousel />
+</div>
+
           </div>
 
         </div>
